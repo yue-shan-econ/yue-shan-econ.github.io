@@ -3610,37 +3610,29 @@ input, select, textarea {
 			}
 
 		}
-/* === 2-column responsive grid === */
+<!-- add AFTER your theme’s main.css -->
+<style>
+/* tighten horizontal spacing, keep rows the same */
 .image-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);  /* 2 equal columns */
-  gap:24px;                              /* space between cells */
-  margin:32px 0;                         /* breathing room above/below */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;      /* gap between left & right columns */
+  row-gap: 24px;
 }
 
-/* make the row grow to fit the tallest caption */
-.image-grid figure{
-  margin:0;
-  display:flex;          /* stack image + caption vertically */
-  flex-direction:column;
-}
-
-/* responsive image */
+/* shrink each picture inside its column */
 .image-grid img{
-  width:100%;
-  height:auto;
-  display:block;
+  width: 85%;           /* ↓ lower this number to shrink more */
+  height: auto;
+  display: block;
+  margin: 0 auto;       /* centers the shrunken image */
 }
 
-/* caption styling */
+/* captions stay centered under the image */
 .image-grid figcaption{
-  text-align:center;
-  font-size:0.9em;
-  margin-top:8px;
-  line-height:1.35;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 6px;
 }
+</style>
 
-/* collapse to 1-column on phones */
-@media (max-width:700px){
-  .image-grid{ grid-template-columns:1fr; }
-}
