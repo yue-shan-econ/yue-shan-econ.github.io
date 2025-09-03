@@ -3610,3 +3610,37 @@ input, select, textarea {
 			}
 
 		}
+/* === 2-column responsive grid === */
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);  /* 2 equal columns */
+  gap:24px;                              /* space between cells */
+  margin:32px 0;                         /* breathing room above/below */
+}
+
+/* make the row grow to fit the tallest caption */
+.image-grid figure{
+  margin:0;
+  display:flex;          /* stack image + caption vertically */
+  flex-direction:column;
+}
+
+/* responsive image */
+.image-grid img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* caption styling */
+.image-grid figcaption{
+  text-align:center;
+  font-size:0.9em;
+  margin-top:8px;
+  line-height:1.35;
+}
+
+/* collapse to 1-column on phones */
+@media (max-width:700px){
+  .image-grid{ grid-template-columns:1fr; }
+}
