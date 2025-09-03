@@ -55,20 +55,28 @@
   <!--  this is what your theme already loads  -->
   <link rel="stylesheet" href="assets/css/main.css">
 
-  <!--  ▸▸  YOUR RULES – must come AFTER the line above  ◂◂  -->
-  <style>
-    /* higher-specificity selector + !important beats the theme */
-    .post .image-grid img{
-      width:75% !important;
-      max-width:75% !important;
-      display:block;
-      margin:0 auto;
-    }
-  </style>
+ <!-- main.css already loaded above this line -->
+<style>
+/* 2-column grid with a small horizontal gap */
+.image-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;   /* ← gap between left & right columns */
+  row-gap: 24px;     /* ← gap between the rows            */
+}
+
+/* pictures fill their half-column completely */
+.image-grid img{
+  width: 100%;       /* keep original size */
+  height: auto;
+  display: block;
+}
+</style>
 </head>
 
 <body>
 
+<!-- ──────────  POST #1  ────────── -->
 <article class="post">
   <header><h2>Strawberry Nursery Project (2022)</h2></header>
 
@@ -84,7 +92,7 @@
     </figure>
 
     <figure>
-      <img src="images/img-8526_orig.jpg"  alt="">
+      <img src="images/img-8526_orig.jpg" alt="">
       <figcaption>Weed-control machines</figcaption>
     </figure>
 
@@ -95,10 +103,8 @@
   </div>
 </article>
 
-</body>
-</html>
-</article>
-<!-- Post -->
+
+<!-- ──────────  POST #2  ────────── -->
 <article class="post">
   <header>
     <h2><a href="single-wilmington.html">
@@ -106,22 +112,17 @@
     </a></h2>
   </header>
 
-  <!-- 1-or-2-column image area -->
   <div class="image-grid">
-    <!-- first (or only) picture -->
     <figure>
       <img src="images/img-6343.jpg" alt="">
       <figcaption>Container yard at the Port of Wilmington</figcaption>
     </figure>
 
-    <!--
-    <figure>  <---- UNCOMMENT if you add a 2nd image
-      <img src="images/wilmington-gantry.jpg" alt="">
-      <figcaption>Gantry cranes loading strawberry-nursery containers</figcaption>
-    </figure>
-    -->
+    <!-- add a second figure here if you want two photos side-by-side -->
   </div>
-</article>				
+</article>
+
+</body>
 				<!-- Footer -->
 					<section id="footer">
 						<ul class="icons">
