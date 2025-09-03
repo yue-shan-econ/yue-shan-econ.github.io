@@ -53,34 +53,34 @@
   <title>Grid-size test</title>
 
 <style>
-/* ── 1  NARROW THE GRID ITSELF ───────────────────────── */
+/* ── 1  widen the grid & shrink the gap ───────────────────────── */
 .post .image-grid{
-  max-width: 540px !important;   /* ← shrink here (e.g. 480, 420)  */
-  margin: 0 auto !important;     /* centre the grid on the page    */
+  max-width: 700px !important;   /* ● overall block width (raise/lower) */
+  margin: 0 auto !important;
 
   display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  column-gap: 8px !important;    /* space between L- and R-column  */
-  row-gap: 24px !important;      /* vertical space between rows    */
+  grid-template-columns: 1fr 1fr !important;
+  column-gap: 4px !important;    /* ● horizontal space between columns */
+  row-gap: 24px !important;      /* vertical space between rows         */
 }
 
-/* ── 2  SHRINK EACH PICTURE INSIDE ITS HALF-COLUMN ───── */
+/* ── 2  enlarge each picture inside its column ─────────────────── */
 .post .image-grid img{
-  width: 75% !important;         /* ← shrink here (50 %…70 %)      */
-  max-width: 75% !important;
+  width: 90% !important;         /* ● % of its half-column to fill      */
+  max-width: 90% !important;
   height: auto !important;
   display: block !important;
-  margin: 0 auto !important;     /* keep image centred             */
+  margin: 0 auto !important;     /* keep it centred                     */
 }
 
-/* ── 3  CAPTION STYLE (unchanged, centred) ───────────── */
+/* captions stay centred */
 .post .image-grid figcaption{
   text-align: center;
   font-size: 0.9em;
   margin-top: 6px;
 }
 
-/* ── 4  PHONE VIEW: 1 COLUMN, FULL-WIDTH IMAGES ──────── */
+/* phone view: one column, full-width pics */
 @media (max-width: 700px){
   .post .image-grid{
     max-width: 90% !important;
