@@ -46,74 +46,57 @@
 <meta charset="UTF-8">
 <title>Fieldwork Experience – Yue Shan</title>
 
-<!--  ▼▼  OVERRIDES (loaded AFTER the theme) ▼▼  -->
-<style>
-/*  Wrap the grid and narrow the whole block */
-.image-grid-wrapper{
-  max-width:600px !important;     /* ← lower = columns closer */
-  margin:0 auto !important;       /* centre the block */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid-size test</title>
 
-/*  2-column grid with small gap */
-.image-grid{
-  display:grid !important;
-  grid-template-columns:repeat(2,1fr) !important;
-  gap:12px !important;            /* ← gap between columns/rows */
-}
+  <!--  this is what your theme already loads  -->
+  <link rel="stylesheet" href="assets/css/main.css">
 
-/*  Image sizing inside each cell */
-.image-grid img{
-  width:85% !important;           /* raise/lower to taste */
-  height:auto !important;
-  display:block !important;
-  margin:0 auto !important;       /* centre inside its cell */
-}
-
-/*  Caption */
-.image-grid figcaption{
-  text-align:center;
-  font-size:0.9em;
-  margin-top:6px;
-}
-
-/*  Mobile: stack to 1 column */
-@media (max-width:700px){
-  .image-grid-wrapper{ max-width:90% !important; }
-  .image-grid{ grid-template-columns:1fr !important; }
-  .image-grid img{ width:90% !important; }
-}
-</style>
+  <!--  ▸▸  YOUR RULES – must come AFTER the line above  ◂◂  -->
+  <style>
+    /* higher-specificity selector + !important beats the theme */
+    .post .image-grid img{
+      width:75% !important;
+      max-width:75% !important;
+      display:block;
+      margin:0 auto;
+    }
+  </style>
 </head>
 
 <body>
 
 <article class="post">
-  <header><h2>Strawberry Nursery Project (2022 Summer)</h2></header>
+  <header><h2>Strawberry Nursery Project (2022)</h2></header>
 
-  <!--  WRAPPER that sets the max-width  -->
-  <div class="image-grid-wrapper">
-    <div class="image-grid">
-      <figure>
-        <img src="images/jun30psi-hen-field05.jpg" alt="">
-        <figcaption>Nursery plants with shield</figcaption>
-      </figure>
+  <div class="image-grid">
+    <figure>
+      <img src="images/jun30psi-hen-field05.jpg" alt="">
+      <figcaption>Nursery plants with shield</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/2022-06-30-11-03-11.jpg" alt="">
-        <figcaption>Research team photo</figcaption>
-      </figure>
+    <figure>
+      <img src="images/2022-06-30-11-03-11.jpg" alt="">
+      <figcaption>Research team photo</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/img-8526_orig.jpg" alt="">
-        <figcaption>Weed-control machines</figcaption>
-      </figure>
+    <figure>
+      <img src="images/img-8526_orig.jpg"  alt="">
+      <figcaption>Weed-control machines</figcaption>
+    </figure>
 
-      <figure>
-        <img src="images/jun30psi-packing-machine01.jpg" alt="">
-        <figcaption>Packing machines</figcaption>
-      </figure>
-    </div>
+    <figure>
+      <img src="images/jun30psi-packing-machine01.jpg" alt="">
+      <figcaption>Packing machines</figcaption>
+    </figure>
   </div>
+</article>
+
+</body>
+</html>
 </article>
 <!-- Post -->
 <article class="post">
