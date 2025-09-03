@@ -40,15 +40,49 @@
 								</form>
 							</section>
 					</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fieldwork Experience – Yue Shan</title>
+
+<!-- ───────────  GRID + SIZING RULES  ─────────── -->
 <style>
-/* make every image 75 % of its column and center it */
-.image-grid img {
-  width: 75%;
-  height: auto;      /* keeps aspect-ratio */
-  display: block;
-  margin: 0 auto;    /* centers inside the figure */
+/* 2-column grid */
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin:32px 0;
+}
+
+/* shrink each picture to 75 % of its cell */
+.image-grid img{
+  width:75%;
+  height:auto;
+  display:block;
+  margin:0 auto;          /* centre inside the figure */
+  border-radius:6px;      /* optional: rounded corners */
+}
+
+/* caption */
+.image-grid figcaption{
+  text-align:center;
+  font-size:0.9em;
+  margin-top:8px;
+  line-height:1.35;
+}
+
+/* responsive: stack to 1 column under 700 px */
+@media (max-width:700px){
+  .image-grid{ grid-template-columns:1fr; }
+  .image-grid img{ width:85%; }   /* a bit wider on phones */
 }
 </style>
+</head>
+
+<body>
+
 <!-- Post -->
 <article class="post">
   <header>
