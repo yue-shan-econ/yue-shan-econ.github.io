@@ -53,34 +53,33 @@
   <title>Grid-size test</title>
 
 <style>
-/* ── Two-column grid: slim gap, wider photos ───────────── */
+/* leave the grid and gap unchanged */
 .post .image-grid{
-  max-width: 700px !important;   /* overall width of the whole block  */
+  max-width: 700px !important;
   margin: 0 auto !important;
-
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  column-gap: 2px !important;    /* ← much smaller gap between columns */
-  row-gap: 24px !important;      /* vertical spacing stays the same    */
+  column-gap: 2px !important;   /* ← your perfect gap */
+  row-gap: 24px !important;
 }
 
-/* photos fill 96 % of their half-column */
+/* enlarge each picture slightly */
 .post .image-grid img{
-  width: 96% !important;         /* ← enlarge image (bigger number = larger) */
-  max-width: 96% !important;
+  width: 98% !important;        /* ← raise from 96 to 98 % (try 99 % if you want) */
+  max-width: 98% !important;
   height: auto !important;
   display: block !important;
-  margin: 0 auto !important;     /* keep them centred in each column   */
+  margin: 0 auto !important;    /* keep centred */
 }
 
-/* captions remain centred under each photo */
+/* captions unchanged */
 .post .image-grid figcaption{
   text-align: center;
   font-size: 0.9em;
   margin-top: 6px;
 }
 
-/* phone view: stack into one column */
+/* phone view (one-column stack) */
 @media (max-width: 700px){
   .post .image-grid{
     max-width: 90% !important;
@@ -92,6 +91,7 @@
   }
 }
 </style>
+
 
 </head>
 
