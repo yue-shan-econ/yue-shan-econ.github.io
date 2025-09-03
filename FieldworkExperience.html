@@ -52,24 +52,44 @@
   <meta charset="UTF-8">
   <title>Grid-size test</title>
 
-  <!--  this is what your theme already loads  -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
- <!-- main.css already loaded above this line -->
 <style>
-/* 2-column grid with a small horizontal gap */
-.image-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 8px;   /* ← gap between left & right columns */
-  row-gap: 24px;     /* ← gap between the rows            */
+/* ── 1  NARROW THE GRID ITSELF ───────────────────────── */
+.post .image-grid{
+  max-width: 540px !important;   /* ← shrink here (e.g. 480, 420)  */
+  margin: 0 auto !important;     /* centre the grid on the page    */
+
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  column-gap: 8px !important;    /* space between L- and R-column  */
+  row-gap: 24px !important;      /* vertical space between rows    */
 }
 
-/* pictures fill their half-column completely */
-.image-grid img{
-  width: 100%;       /* keep original size */
-  height: auto;
-  display: block;
+/* ── 2  SHRINK EACH PICTURE INSIDE ITS HALF-COLUMN ───── */
+.post .image-grid img{
+  width: 60% !important;         /* ← shrink here (50 %…70 %)      */
+  max-width: 60% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;     /* keep image centred             */
+}
+
+/* ── 3  CAPTION STYLE (unchanged, centred) ───────────── */
+.post .image-grid figcaption{
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+
+/* ── 4  PHONE VIEW: 1 COLUMN, FULL-WIDTH IMAGES ──────── */
+@media (max-width: 700px){
+  .post .image-grid{
+    max-width: 90% !important;
+    grid-template-columns: 1fr !important;
+  }
+  .post .image-grid img{
+    width: 90% !important;
+    max-width: 90% !important;
+  }
 }
 </style>
 </head>
